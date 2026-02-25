@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navro'zbek Qodirov | Aloqa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at top right, #1e293b, #0f172a, #020617);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            width: 100%;
+            max-width: 420px;
+            padding: 40px 30px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .robot-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .link-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .social-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: white;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        .social-btn i {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .social-btn span {
+            font-size: 12px;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        .robot-msg {
+            background: #eff6ff;
+            color: #1e40af;
+            padding: 15px;
+            border-radius: 18px 18px 18px 4px;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-top: 20px;
+            display: none;
+            animation: slideIn 0.4s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn-advice {
+            width: 100%;
+            padding: 14px;
+            margin-top: 20px;
+            border-radius: 16px;
+            background: white;
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-advice:hover {
+            background: #dbeafe;
+            transform: scale(0.98);
+        }
+
+        .glow {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(59, 130, 246, 0.2);
+            filter: blur(70px);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glass-card">
+        <div class="glow"></div>
+        
+        <!-- Robot Ikonkasi -->
+        <div class="robot-container">
+            <i class="fas fa-robot"></i>
+        </div>
+
+        <div class="text-center mb-6">
+            <h1 class="text-2xl font-extrabold tracking-tight">Navro'zbek Qodirov</h1>
+            <p class="text-blue-400 text-xs font-bold uppercase tracking-widest mt-1">Cyber Security & AI Specialist</p>
+        </div>
+
+        <!-- Bog'lanish Tugmalari -->
+        <div class="link-grid">
+            <a href="https://t.me/Qodirov_Navrozbek" target="_blank" class="social-btn">
+                <i class="fab fa-telegram text-blue-400"></i>
+                <span>Telegram</span>
+            </a>
+            <a href="https://instagram.com/navrozbeknabijonogli" target="_blank" class="social-btn">
+                <i class="fab fa-instagram text-pink-500"></i>
+                <span>Instagram</span>
+            </a>
+            <a href="mailto:qodirovnavrozbek199@gmail.com" class="social-btn">
+                <i class="fas fa-envelope text-yellow-500"></i>
+                <span>Email</span>
+            </a>
+            <a href="tel:+998502300500" class="social-btn">
+                <i class="fas fa-phone text-green-500"></i>
+                <span>Telefon</span>
+            </a>
+        </div>
+
+        <!-- Robot Maslahati Bolimi -->
+        <button onclick="getRobotAdvice()" class="btn-advice">
+            <i class="fas fa-comment-dots"></i>
+            ROBOTDAN MASLAHAT OLISH
+        </button>
+
+        <div id="advice-box" class="robot-msg"></div>
+    </div>
+
+    <script>
+        // Taqdim etilgan API kalit
+        const apiKey = "AIzaSyA27OILcBbXkGr6S7TtMPE0Eme0fpevLkc"; 
+
+        async function getRobotAdvice() {
+            const box = document.getElementById('advice-box');
+            box.style.display = 'block';
+            box.innerHTML = `<i class="fas fa-spinner fa-spin mr-2"></i> Robot o'ylamoqda...`;
+
+            // Tizim uchun ko'rsatma
+            const systemPrompt = "Sen Navro'zbek Qodirovning aqlli yordamchi robotsan. Mehmonlarga kiberxavfsizlik, AI yoki texnologiyalar bo'yicha juda qisqa, o'zbek tilida qiziqarli va foydali maslahat ber.";
+            const userPrompt = "Menga bitta foydali maslahat ber.";
+
+            // Exponential backoff bilan retry funksiyasi
+            const fetchWithRetry = async (url, options, retries = 5, backoff = 1000) => {
+                try {
+                    const res = await fetch(url, options);
+                    if (!res.ok) throw new Error('API Error');
+                    return await res.json();
+                } catch (err) {
+                    if (retries > 0) {
+                        await new Promise(resolve => setTimeout(resolve, backoff));
+                        return fetchWithRetry(url, options, retries - 1, backoff * 2);
+                    }
+                    throw err;
+                }
+            };
+
+            try {
+                const data = await fetchWithRetry(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: userPrompt }] }],
+                        systemInstruction: { parts: [{ text: systemPrompt }] }
+                    })
+                });
+                
+                const advice = data.candidates?.[0]?.content?.parts?.[0]?.text || "Hozircha maslahat bera olmayman, keyinroq urinib ko'ring!";
+                box.innerHTML = `<strong>Robot:</strong> ${advice}`;
+            } catch (error) {
+                box.innerHTML = "Xatolik yuz berdi. API kalitini tekshiring yoki keyinroq urinib ko'ring.";
+            }
+        }
+    </script>
+</body>
+</html>
